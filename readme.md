@@ -1,17 +1,20 @@
-# 文件修改
-## 1. 修改Dockerfile
-修改Dockerfile第三行的环境变量 为最新版本(或想玩的版本)的服务器下载链接
+# 使用方法
+## 1. 文件修改
+### 1.1. 修改Dockerfile (决定你的服务器版本)
+修改Dockerfile第三行的环境变量
 
-## 2. 修改配置文件 mcbe_config/
-`server.properties` 游戏配置  
-__世界名称__(对应worlds的子文件夹)  __世界种子__ 难度 模式  ...  
+### 1.2. 修改配置文件
+`mcbe_config/`文件夹中  
+- `server.properties` 游戏配置  （地图名字 地图种子 难度...）
 
-## 3. 权限 白名单  
-随意...
+- 另外两个文件是权限 白名单  
+ 看需求随意...
+
+### 1.3. 加入自己的图 （如果你有的话）
+`worlds/`  _地图文件夹放这里 (名字要对应`server.properties`中的)_
 
 
-
-# 通过dockerfile 创建image
+## 2.创建image
 
 ```shell
 docker build -t mcbe_server .
@@ -19,7 +22,7 @@ docker build -t mcbe_server .
 
 
 
-# 通过image 创建容器
+## 3.创建容器
 
 ```shell
 docker run -itd -v "$(pwd)/mcbe_config:/mcbe_config/"\
@@ -29,7 +32,7 @@ docker run -itd -v "$(pwd)/mcbe_config:/mcbe_config/"\
 
 
 
-# 启动/停止/重启 服务器
+## 启动/停止/重启 容器
 
 ```shell
 # mcbe 对应创建容器的 --name
