@@ -3,4 +3,4 @@ old_world/
 MCBE跨档文件/
 worlds/*
 !worlds/your_world_name
-mcbe_config/*
+mcbe_config/
