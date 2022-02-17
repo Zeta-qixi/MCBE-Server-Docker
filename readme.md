@@ -1,6 +1,12 @@
 # 使用方法
+
+## 0. 前期环境
+### 0.1. 安装docker
+### 0.2. 开放端口 ( 对应 3 中的-p )
+
 ## 1. 文件修改
 ### 1.1. 修改Dockerfile (决定你的服务器版本)
+[mcbe服务器](https://www.minecraft.net/zh-hans/download/server/bedrock/)
 修改Dockerfile第三行的环境变量
 
 ### 1.2. 修改配置文件
