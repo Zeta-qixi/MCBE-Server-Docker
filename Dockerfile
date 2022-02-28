@@ -12,18 +12,30 @@ RUN apt-get update \
 
 
 ADD mcbe_config/ /mcbe_config/
+ADD mcbe_packs/ /mcbe_packs/
+
 # remove file
 RUN rm /mcbe_server/server.properties \
     && rm mcbe_server/allowlist.json \
-    && rm /mcbe_server/permissions.json
+    && rm /mcbe_server/permissions.json 
+
 # link
 RUN ln -s /mcbe_config/server.properties /mcbe_server/server.properties \
     && ln -s /mcbe_config/whitelist.json /mcbe_server/allowlist.json \
     && ln -s /mcbe_config/permissions.json /mcbe_server/permissions.json
 
+RUN mv /mcbe_packs/copy_packs.sh /mcbe_server \
+    && chmod +x /mcbe_server/copy_packs.sh
+
 RUN rm -rf /var/lib/apy/list/*
+
+
+
+
+
 
 WORKDIR /mcbe_server
  
 ENV LD_LIBRARY_PATH=.
-CMD ["./bedrock_server"]
+
+CMD ["./copy_packs.sh"]

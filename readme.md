@@ -46,6 +46,7 @@ docker build -t mcbe_server .
 ```shell
 docker run -itd -v "$(pwd)/mcbe_config:/mcbe_config/"\
  -v "$(pwd)/worlds:/mcbe_server/worlds"\
+ -v "$(pwd)/mcbe_packs:/mcbe_packs"\
  -p 9000:19132/udp --name mcbe mcbe_server
 ```
 

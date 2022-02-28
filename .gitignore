@@ -1,6 +1,9 @@
-behavior_packs/
+behavior_packs_/
 old_world/
+
+packs/
 MCBE跨档文件/
 worlds/*
 !worlds/your_world_name
+mcbe_config/
 mcbe_config/
