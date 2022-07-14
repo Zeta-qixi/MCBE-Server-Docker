@@ -1,11 +1,11 @@
 FROM  ubuntu:latest
 # https://www.minecraft.net/zh-hans/download/server/bedrock
-ENV DOWNLOAD_URL https://minecraft.azureedge.net/bin-linux/bedrock-server-1.18.11.01.zip
+ENV DOWNLOAD_URL https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.10.03.zip
 
 EXPOSE 19132/udp
 # unzip openssl wget
 RUN apt-get update \
-    && apt-get install unzip openssl wget -y \
+    && apt-get install unzip openssl wget libcurl4-openssl-dev -y \
     && wget -O mcbe_server.zip ${DOWNLOAD_URL} \
     && unzip mcbe_server.zip -d mcbe_server \
     && rm mcbe_server.zip
